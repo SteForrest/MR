@@ -5,6 +5,7 @@ CAUSR1Comps AS  StringSet;
 
 CAUSR2Comps AS  StringSet;
   CAUSR2Comps.Description : "Components with CAUSR2 attribute";
+  Stefano Foresti Rulez
 
 CAUSR3Comps AS  StringSet;
   CAUSR3Comps.Description : "Components with CAUSR3 attribute";
@@ -382,7 +383,7 @@ Model Tubular_membranes
   P_ret    ([0:x.EndNode])  as pressure; //bar
   P_per    ([x2:x.EndNode]) as pressure;
   P_per_p  ([x2:x.EndNode]) as pressure;
-  T_ret    ([0:x.EndNode])  as temperature; //°C
+  T_ret    ([0:x.EndNode])  as temperature; //Â°C
   T_per    ([x2:x.EndNode]) as temperature;
   q_loss([0:x.EndNode]) as power; //kW
   Q_loss_tot as power (free, 1);
@@ -512,7 +513,7 @@ Model Tubular_membranes
   DH0_r   (ReactionList)                as enth_mol;
   DH0          (ComponentList)                as enth_mol;       //GJ/kmol  of pure species in standard conditions (298K, 1 bar)
   r       (ReactionList, [1:x.EndNode]) as reaction_rate_1;//kmol/(kg_cat s)
-  T_std        as temperature (fixed, 25);    //°C
+  T_std        as temperature (fixed, 25);    //Â°C
   P_std        as pressure    (fixed, 1);     //bar
   z_pure       (ComponentList, ComponentList) as molefraction;   //pure components
   ref_comp     (ReactionList)                 as StringParameter;
@@ -1284,7 +1285,7 @@ u_e(0) = u_ret(0);
       Eq_P_per_p2: P_per_p(i) = P_per_p(i-1);// -64/Re_per_p(i)/2*C_per_p(i)*MW_per(x2)*(u_per_p(i)^2)/2*dx3/(2*r_int_pipe)*1e-5;
     Endif
   EndFor
-  Eq_P_per_p3: P_per_p(x2) = P_per(x2)*0.99;// - 5 *C_per(x2)*MW_per(x2)*(u_per(x2)^2)/2*1e-5; //check formula for pressure drop due to annulus-pipe 180° bend
+  Eq_P_per_p3: P_per_p(x2) = P_per(x2)*0.99;// - 5 *C_per(x2)*MW_per(x2)*(u_per(x2)^2)/2*1e-5; //check formula for pressure drop due to annulus-pipe 180Â° bend
 
 
   P_ret(1) = P_ret(0) - p*C_ret(1)*MW_ret(1)*u_ret(1)^2/(2*(0.6*0.1)^2)*1e-5; //Cd = discharge coefficient=0.6; F = fractional free area=0.1
@@ -1460,14 +1461,14 @@ YProfileName: -
 VariablesPaths : [ 10 P_CH4_e(*) 10 P_CO2_e(*) 9 P_CO_e(*) 11 P_EtOH_e(*) 9 P_H2_e(*) 10 P_H2O_e(*) 9 P_N2_e(*) 9 P_O2_e(*) ]
 HistoryVariablesPaths : [ ]
 Times : [ L ]
-ProfileNames : [ 8 New¬Profile
-New¬Profilea
-New¬Profileb
-New¬Profilec
-New¬Profiled
-New¬Profilee
-New¬Profilef
-New¬Profileg]
+ProfileNames : [ 8 NewÂ¬Profile
+NewÂ¬Profilea
+NewÂ¬Profileb
+NewÂ¬Profilec
+NewÂ¬Profiled
+NewÂ¬Profilee
+NewÂ¬Profilef
+NewÂ¬Profileg]
 NoVars : [ 1 1 1 1 1 1 1 1 ]
 UnusedVariablesPaths : [ ]
 UnusedProfileDimensions : [ ]
@@ -1660,14 +1661,14 @@ YProfileName: -
 VariablesPaths : [ 10 P_CH4_b(*) 10 P_CO2_b(*) 9 P_CO_b(*) 11 P_EtOH_b(*) 9 P_H2_b(*) 10 P_H2O_b(*) 9 P_N2_b(*) 9 P_O2_b(*) ]
 HistoryVariablesPaths : [ ]
 Times : [ L ]
-ProfileNames : [ 8 New¬Profile
-New¬Profilea
-New¬Profileb
-New¬Profilec
-New¬Profiled
-New¬Profilee
-New¬Profilef
-New¬Profileg]
+ProfileNames : [ 8 NewÂ¬Profile
+NewÂ¬Profilea
+NewÂ¬Profileb
+NewÂ¬Profilec
+NewÂ¬Profiled
+NewÂ¬Profilee
+NewÂ¬Profilef
+NewÂ¬Profileg]
 NoVars : [ 1 1 1 1 1 1 1 1 ]
 UnusedVariablesPaths : [ ]
 UnusedProfileDimensions : [ ]
@@ -1860,8 +1861,8 @@ YProfileName: -
 VariablesPaths : [ 8 r_MSR(*) 8 r_WGS(*) ]
 HistoryVariablesPaths : [ ]
 Times : [ L ]
-ProfileNames : [ 2 New¬Profile
-New¬Profilea]
+ProfileNames : [ 2 NewÂ¬Profile
+NewÂ¬Profilea]
 NoVars : [ 1 1 ]
 UnusedVariablesPaths : [ ]
 UnusedProfileDimensions : [ ]
@@ -2154,7 +2155,7 @@ Model Tubular_membranes
   P_ret    ([0:x.EndNode])  as pressure; //bar
   P_per    ([x2:x.EndNode]) as pressure;
   P_per_p  ([x2:x.EndNode]) as pressure;
-  T_ret    ([0:x.EndNode])  as temperature; //°C
+  T_ret    ([0:x.EndNode])  as temperature; //Â°C
   T_per    ([x2:x.EndNode]) as temperature;
   q_loss([0:x.EndNode]) as power; //kW
   Q_loss_tot as power (free, 1);
@@ -2284,7 +2285,7 @@ Model Tubular_membranes
   DH0_r   (ReactionList)                as enth_mol;
   DH0          (ComponentList)                as enth_mol;       //GJ/kmol  of pure species in standard conditions (298K, 1 bar)
   r       (ReactionList, [1:x.EndNode]) as reaction_rate_1;//kmol/(kg_cat s)
-  T_std        as temperature (fixed, 25);    //°C
+  T_std        as temperature (fixed, 25);    //Â°C
   P_std        as pressure    (fixed, 1);     //bar
   z_pure       (ComponentList, ComponentList) as molefraction;   //pure components
   ref_comp     (ReactionList)                 as StringParameter;
@@ -3053,7 +3054,7 @@ u_e(0) = u_ret(0);
       Eq_P_per_p2: P_per_p(i) = P_per_p(i-1);// -64/Re_per_p(i)/2*C_per_p(i)*MW_per(x2)*(u_per_p(i)^2)/2*dx3/(2*r_int_pipe)*1e-5;
     Endif
   EndFor
-  Eq_P_per_p3: P_per_p(x2) = P_per(x2)*0.99;// - 5 *C_per(x2)*MW_per(x2)*(u_per(x2)^2)/2*1e-5; //check formula for pressure drop due to annulus-pipe 180° bend
+  Eq_P_per_p3: P_per_p(x2) = P_per(x2)*0.99;// - 5 *C_per(x2)*MW_per(x2)*(u_per(x2)^2)/2*1e-5; //check formula for pressure drop due to annulus-pipe 180Â° bend
 
 
   P_ret(1) = P_ret(0) - p*C_ret(1)*MW_ret(1)*u_ret(1)^2/(2*(0.6*0.1)^2)*1e-5; //Cd = discharge coefficient=0.6; F = fractional free area=0.1
@@ -3258,14 +3259,14 @@ YProfileName: -
 VariablesPaths : [ 10 P_CH4_e(*) 10 P_CO2_e(*) 9 P_CO_e(*) 11 P_EtOH_e(*) 9 P_H2_e(*) 10 P_H2O_e(*) 9 P_N2_e(*) 9 P_O2_e(*) ]
 HistoryVariablesPaths : [ ]
 Times : [ L ]
-ProfileNames : [ 8 New¬Profile
-New¬Profilea
-New¬Profileb
-New¬Profilec
-New¬Profiled
-New¬Profilee
-New¬Profilef
-New¬Profileg]
+ProfileNames : [ 8 NewÂ¬Profile
+NewÂ¬Profilea
+NewÂ¬Profileb
+NewÂ¬Profilec
+NewÂ¬Profiled
+NewÂ¬Profilee
+NewÂ¬Profilef
+NewÂ¬Profileg]
 NoVars : [ 1 1 1 1 1 1 1 1 ]
 UnusedVariablesPaths : [ ]
 UnusedProfileDimensions : [ ]
@@ -3394,14 +3395,14 @@ YProfileName: -
 VariablesPaths : [ 10 P_CH4_b(*) 10 P_CO2_b(*) 9 P_CO_b(*) 11 P_EtOH_b(*) 9 P_H2_b(*) 10 P_H2O_b(*) 9 P_N2_b(*) 9 P_O2_b(*) ]
 HistoryVariablesPaths : [ ]
 Times : [ L ]
-ProfileNames : [ 8 New¬Profile
-New¬Profilea
-New¬Profileb
-New¬Profilec
-New¬Profiled
-New¬Profilee
-New¬Profilef
-New¬Profileg]
+ProfileNames : [ 8 NewÂ¬Profile
+NewÂ¬Profilea
+NewÂ¬Profileb
+NewÂ¬Profilec
+NewÂ¬Profiled
+NewÂ¬Profilee
+NewÂ¬Profilef
+NewÂ¬Profileg]
 NoVars : [ 1 1 1 1 1 1 1 1 ]
 UnusedVariablesPaths : [ ]
 UnusedProfileDimensions : [ ]
@@ -3530,8 +3531,8 @@ YProfileName: -
 VariablesPaths : [ 8 r_MSR(*) 8 r_WGS(*) ]
 HistoryVariablesPaths : [ ]
 Times : [ L ]
-ProfileNames : [ 2 New¬Profile
-New¬Profilea]
+ProfileNames : [ 2 NewÂ¬Profile
+NewÂ¬Profilea]
 NoVars : [ 1 1 ]
 UnusedVariablesPaths : [ ]
 UnusedProfileDimensions : [ ]
